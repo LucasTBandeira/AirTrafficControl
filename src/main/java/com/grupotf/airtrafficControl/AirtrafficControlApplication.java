@@ -9,5 +9,4 @@ public class AirtrafficControlApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(AirtrafficControlApplication.class, args);
 	}
-
 }
