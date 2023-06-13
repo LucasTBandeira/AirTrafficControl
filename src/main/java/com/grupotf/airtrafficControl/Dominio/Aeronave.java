@@ -1,6 +1,7 @@
 package com.grupotf.airtrafficControl.Dominio;
 
 public class Aeronave {
+    
     protected long id;
     protected String prefixo;
     protected double velocidade;

@@ -1,5 +1,5 @@
 package com.grupotf.airtrafficControl.Dominio;
 
-public class IRepositorioDeVoos {
+public interface IRepositorioDeVoos {
     
 }

@@ -1,5 +1,7 @@
 package com.grupotf.airtrafficControl.Adaptadores;
 
-public class RepositorioDeAeronavesJPA {
+import com.grupotf.airtrafficControl.Dominio.IRepositorioDeAeronaves;
+
+public class RepositorioDeAeronavesJPA implements IRepositorioDeAeronaves{
     
 }
