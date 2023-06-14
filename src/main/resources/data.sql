@@ -1,149 +1,149 @@
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('SP-RJ', 'Sao Paulo', 'Rio de Janeiro', 437);
+insert into rota (nome, origem, destino, distancia)
+values ('sp-rj', 'sao paulo', 'rio de janeiro', 437);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('RJ-SP', 'Rio de Janeiro', 'Sao Paulo', 437);
+insert into rota (nome, origem, destino, distancia)
+values ('rj-sp', 'rio de janeiro', 'sao paulo', 437);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('SP-BH', 'Sao Paulo', 'Belo Horizonte', 586);
+insert into rota (nome, origem, destino, distancia)
+values ('sp-bh', 'sao paulo', 'belo horizonte', 586);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('BH-SP', 'Belo Horizonte', 'Sao Paulo', 586);
+insert into rota (nome, origem, destino, distancia)
+values ('bh-sp', 'belo horizonte', 'sao paulo', 586);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('SP-DF', 'Sao Paulo', 'Brasilia', 1018);
+insert into rota (nome, origem, destino, distancia)
+values ('sp-df', 'sao paulo', 'brasilia', 1018);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('DF-SP', 'Brasilia', 'Sao Paulo', 1018);
+insert into rota (nome, origem, destino, distancia)
+values ('df-sp', 'brasilia', 'sao paulo', 1018);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('SP-SLV', 'Sao Paulo', 'Salvador', 1657);
+insert into rota (nome, origem, destino, distancia)
+values ('sp-slv', 'sao paulo', 'salvador', 1657);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('SLV-SP', 'Salvador', 'Sao Paulo', 1657);
+insert into rota (nome, origem, destino, distancia)
+values ('slv-sp', 'salvador', 'sao paulo', 1657);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('SP-FN', 'Sao Paulo', 'Fortaleza', 2830);
+insert into rota (nome, origem, destino, distancia)
+values ('sp-fn', 'sao paulo', 'fortaleza', 2830);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('FN-SP', 'Fortaleza', 'Sao Paulo', 2830);
+insert into rota (nome, origem, destino, distancia)
+values ('fn-sp', 'fortaleza', 'sao paulo', 2830);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('RJ-BH', 'Rio de Janeiro', 'Belo Horizonte', 434);
+insert into rota (nome, origem, destino, distancia)
+values ('rj-bh', 'rio de janeiro', 'belo horizonte', 434);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('BH-RJ', 'Belo Horizonte', 'Rio de Janeiro', 434);
+insert into rota (nome, origem, destino, distancia)
+values ('bh-rj', 'belo horizonte', 'rio de janeiro', 434);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('RJ-DF', 'Rio de Janeiro', 'Brasilia', 1148);
+insert into rota (nome, origem, destino, distancia)
+values ('rj-df', 'rio de janeiro', 'brasilia', 1148);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('DF-RJ', 'Brasilia', 'Rio de Janeiro', 1148);
+insert into rota (nome, origem, destino, distancia)
+values ('df-rj', 'brasilia', 'rio de janeiro', 1148);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('RJ-SLV', 'Rio de Janeiro', 'Salvador', 1558);
+insert into rota (nome, origem, destino, distancia)
+values ('rj-slv', 'rio de janeiro', 'salvador', 1558);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('SLV-RJ', 'Salvador', 'Rio de Janeiro', 1558);
+insert into rota (nome, origem, destino, distancia)
+values ('slv-rj', 'salvador', 'rio de janeiro', 1558);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('RJ-FN', 'Rio de Janeiro', 'Fortaleza', 2774);
+insert into rota (nome, origem, destino, distancia)
+values ('rj-fn', 'rio de janeiro', 'fortaleza', 2774);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('FN-RJ', 'Fortaleza', 'Rio de Janeiro', 2774);
+insert into rota (nome, origem, destino, distancia)
+values ('fn-rj', 'fortaleza', 'rio de janeiro', 2774);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('BH-DF', 'Belo Horizonte', 'Brasilia', 719);
+insert into rota (nome, origem, destino, distancia)
+values ('bh-df', 'belo horizonte', 'brasilia', 719);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('DF-BH', 'Brasilia', 'Belo Horizonte', 719);
+insert into rota (nome, origem, destino, distancia)
+values ('df-bh', 'brasilia', 'belo horizonte', 719);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('BH-SLV', 'Belo Horizonte', 'Salvador', 1381);
+insert into rota (nome, origem, destino, distancia)
+values ('bh-slv', 'belo horizonte', 'salvador', 1381);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('SLV-BH', 'Salvador', 'Belo Horizonte', 1381);
+insert into rota (nome, origem, destino, distancia)
+values ('slv-bh', 'salvador', 'belo horizonte', 1381);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('BH-FN', 'Belo Horizonte', 'Fortaleza', 2595);
+insert into rota (nome, origem, destino, distancia)
+values ('bh-fn', 'belo horizonte', 'fortaleza', 2595);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('FN-BH', 'Fortaleza', 'Belo Horizonte', 2595);
+insert into rota (nome, origem, destino, distancia)
+values ('fn-bh', 'fortaleza', 'belo horizonte', 2595);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('DF-SLV', 'Brasilia', 'Salvador', 1164);
+insert into rota (nome, origem, destino, distancia)
+values ('df-slv', 'brasilia', 'salvador', 1164);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('SLV-DF', 'Salvador', 'Brasilia', 1164);
+insert into rota (nome, origem, destino, distancia)
+values ('slv-df', 'salvador', 'brasilia', 1164);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('DF-FN', 'Brasilia', 'Fortaleza', 2379);
+insert into rota (nome, origem, destino, distancia)
+values ('df-fn', 'brasilia', 'fortaleza', 2379);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('FN-DF', 'Fortaleza', 'Brasilia', 2379);
+insert into rota (nome, origem, destino, distancia)
+values ('fn-df', 'fortaleza', 'brasilia', 2379);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('SLV-FN', 'Salvador', 'Fortaleza', 1626);
+insert into rota (nome, origem, destino, distancia)
+values ('slv-fn', 'salvador', 'fortaleza', 1626);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('FN-SLV', 'Fortaleza', 'Salvador', 1626);
+insert into rota (nome, origem, destino, distancia)
+values ('fn-slv', 'fortaleza', 'salvador', 1626);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('SP-RP', 'Sao Paulo', 'Ribeirao Preto', 313);
+insert into rota (nome, origem, destino, distancia)
+values ('sp-rp', 'sao paulo', 'ribeirao preto', 313);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('RP-SP', 'Ribeirao Preto', 'Sao Paulo', 313);
+insert into rota (nome, origem, destino, distancia)
+values ('rp-sp', 'ribeirao preto', 'sao paulo', 313);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('SP-CPS', 'Sao Paulo', 'Campinas', 94);
+insert into rota (nome, origem, destino, distancia)
+values ('sp-cps', 'sao paulo', 'campinas', 94);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('CPS-SP', 'Campinas', 'Sao Paulo', 94);
+insert into rota (nome, origem, destino, distancia)
+values ('cps-sp', 'campinas', 'sao paulo', 94);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('RJ-CPS', 'Rio de Janeiro', 'Campinas', 499);
+insert into rota (nome, origem, destino, distancia)
+values ('rj-cps', 'rio de janeiro', 'campinas', 499);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('CPS-RJ', 'Campinas', 'Rio de Janeiro', 499);
+insert into rota (nome, origem, destino, distancia)
+values ('cps-rj', 'campinas', 'rio de janeiro', 499);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('RJ-RP', 'Rio de Janeiro', 'Ribeirao Preto', 714);
+insert into rota (nome, origem, destino, distancia)
+values ('rj-rp', 'rio de janeiro', 'ribeirao preto', 714);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('RP-RJ', 'Ribeirao Preto', 'Rio de Janeiro', 714);
+insert into rota (nome, origem, destino, distancia)
+values ('rp-rj', 'ribeirao preto', 'rio de janeiro', 714);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('BH-CPS', 'Belo Horizonte', 'Campinas', 586);
+insert into rota (nome, origem, destino, distancia)
+values ('bh-cps', 'belo horizonte', 'campinas', 586);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('CPS-BH', 'Campinas', 'Belo Horizonte', 586);
+insert into rota (nome, origem, destino, distancia)
+values ('cps-bh', 'campinas', 'belo horizonte', 586);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('BH-RP', 'Belo Horizonte', 'Ribeirao Preto', 523);
+insert into rota (nome, origem, destino, distancia)
+values ('bh-rp', 'belo horizonte', 'ribeirao preto', 523);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('RP-BH', 'Ribeirao Preto', 'Belo Horizonte', 523);
+insert into rota (nome, origem, destino, distancia)
+values ('rp-bh', 'ribeirao preto', 'belo horizonte', 523);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('DF-CPS', 'Brasilia', 'Campinas', 1021);
+insert into rota (nome, origem, destino, distancia)
+values ('df-cps', 'brasilia', 'campinas', 1021);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('CPS-DF', 'Campinas', 'Brasilia', 1021);
+insert into rota (nome, origem, destino, distancia)
+values ('cps-df', 'campinas', 'brasilia', 1021);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('DF-RP', 'Brasilia', 'Ribeirao Preto', 932);
+insert into rota (nome, origem, destino, distancia)
+values ('df-rp', 'brasilia', 'ribeirao preto', 932);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('RP-DF', 'Ribeirao Preto', 'Brasilia', 932);
+insert into rota (nome, origem, destino, distancia)
+values ('rp-df', 'ribeirao preto', 'brasilia', 932);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('SLV-CPS', 'Salvador', 'Campinas', 1464);
+insert into rota (nome, origem, destino, distancia)
+values ('slv-cps', 'salvador', 'campinas', 1464);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('CPS-SLV', 'Campinas', 'Salvador', 1464);
+insert into rota (nome, origem, destino, distancia)
+values ('cps-slv', 'campinas', 'salvador', 1464);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('SLV-RP', 'Salvador', 'Ribeirao Preto', 1668);
+insert into rota (nome, origem, destino, distancia)
+values ('slv-rp', 'salvador', 'ribeirao preto', 1668);
 
-INSERT INTO rota (nome, origem, destino, distancia)
-VALUES ('RP-SLV', 'Ribeirao Preto', 'Salvador', 1668);
+insert into rota (nome, origem, destino, distancia)
+values ('rp-slv', 'ribeirao preto', 'salvador', 1668);
