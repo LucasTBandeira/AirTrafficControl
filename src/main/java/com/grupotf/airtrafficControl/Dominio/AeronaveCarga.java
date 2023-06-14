@@ -1,5 +1,8 @@
 package com.grupotf.airtrafficControl.Dominio;
 
+import jakarta.persistence.Entity;
+
+@Entity
 public class AeronaveCarga extends AeronaveComercial{
 
     private double peso_max;

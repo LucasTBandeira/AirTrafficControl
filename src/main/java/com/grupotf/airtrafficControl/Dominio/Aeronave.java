@@ -1,11 +1,23 @@
 package com.grupotf.airtrafficControl.Dominio;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Aeronave {
     
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected long id;
+
     protected String prefixo;
     protected double velocidade;
     protected double autonomia;
+
+    protected Aeronave() {
+    }
 
     public Aeronave(long id, String prefixo, double velocidade, double autonomia) {
         this.id = id;

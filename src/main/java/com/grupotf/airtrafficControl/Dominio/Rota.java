@@ -1,17 +1,29 @@
 package com.grupotf.airtrafficControl.Dominio;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Rota {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id; 
+
     private String nome;
-    private String aero_Origem;
-    private String aero_Destino;
+    private String origem;
+    private String destino;
     private double distancia;
 
-    public Rota(long id, String nome, String aero_Origem, String aero_Destino, double distancia) {
+    protected Rota() {
+    }
+
+    public Rota(long id, String nome, String origem, String destino, double distancia) {
         this.id = id;
         this.nome = nome;
-        this.aero_Origem = aero_Origem;
-        this.aero_Destino = aero_Destino;
+        this.origem = origem;
+        this.destino = destino;
         this.distancia = distancia;
     }
 
@@ -27,17 +39,17 @@ public class Rota {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    public String getAero_Origem() {
-        return aero_Origem;
+    public String getorigem() {
+        return origem;
     }
-    public void setAero_Origem(String aero_Origem) {
-        this.aero_Origem = aero_Origem;
+    public void setorigem(String origem) {
+        this.origem = origem;
     }
-    public String getAero_Destino() {
-        return aero_Destino;
+    public String getdestino() {
+        return destino;
     }
-    public void setAero_Destino(String aero_Destino) {
-        this.aero_Destino = aero_Destino;
+    public void setdestino(String destino) {
+        this.destino = destino;
     }
     public double getDistancia() {
         return distancia;
@@ -47,7 +59,7 @@ public class Rota {
     }
     @Override
     public String toString() {
-        return "Rota [id=" + id + ", nome=" + nome + ", aero_Origem=" + aero_Origem + ", aero_Destino=" + aero_Destino
+        return "Rota [id=" + id + ", nome=" + nome + ", origem=" + origem + ", destino=" + destino
                 + ", distancia=" + distancia + "]";
     }
 

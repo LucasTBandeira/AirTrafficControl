@@ -2,14 +2,31 @@ package com.grupotf.airtrafficControl.Dominio;
 
 import java.util.Arrays;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+
+@Entity
 public class PlanoDeVoo {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    @ManyToOne
     private Aeronave aeronave;
+
+    @ManyToOne
     private Rota rota;
+    
     private int altitude;
     private String data;
     private int[] slots;
     
+    protected PlanoDeVoo() {
+    }
+
     public PlanoDeVoo(long id, Aeronave aeronave, Rota rota, int altitude, String data, int[] slots) {
         this.id = id;
         this.aeronave = aeronave;

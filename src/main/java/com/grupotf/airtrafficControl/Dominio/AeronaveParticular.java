@@ -1,5 +1,8 @@
 package com.grupotf.airtrafficControl.Dominio;
 
+import jakarta.persistence.Entity;
+
+@Entity
 public class AeronaveParticular extends Aeronave {
 
     private String empresa;
