@@ -19,4 +19,8 @@ public class ServicoDeRotas {
     public List<Rota> pesquisaRota(String origem, String destino){
         return repositorioDeRotas.get(origem.toLowerCase(), destino.toLowerCase());
     }
+
+    public Rota get(String nome){
+        return repositorioDeRotas.get(nome);
+    }
 }

@@ -23,5 +23,9 @@ public class RepositorioDeRotasJPA implements IRepositorioDeRotas{
     public List<Rota> get(String origem, String destino){
         return repoJpa.findByOrigemAndDestino(origem, destino);
     }
+
+    public Rota get(String nome) {
+       return repoJpa.findByNome(nome);
+    }
     
 }
