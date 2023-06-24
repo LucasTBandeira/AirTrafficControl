@@ -147,3 +147,21 @@ values ('slv-rp', 'salvador', 'ribeirao preto', 1668);
 
 insert into rota (nome, origem, destino, distancia)
 values ('rp-slv', 'ribeirao preto', 'salvador', 1668);
+
+INSERT INTO aeronave (aeronave, id, prefixo, velocidade, autonomia, empresa, n_passageiros, peso_max, companhia)
+VALUES ('particular', 0, 'PTABA', 800, 2500, 'MEC1', NULL, NULL, NULL);
+
+INSERT INTO aeronave (aeronave, id, prefixo, velocidade, autonomia, empresa, n_passageiros, peso_max, companhia)
+VALUES ('particular', 1, 'PTACA', 800, 2500, 'MEC2', NULL, NULL, NULL);
+
+INSERT INTO aeronave (aeronave, id, prefixo, velocidade, autonomia, empresa, n_passageiros, peso_max, companhia)
+VALUES ('passageiros', 2, 'PPADA', 1200, 5000, NULL, 200, NULL, 'GOL');
+
+INSERT INTO aeronave (aeronave, id, prefixo, velocidade, autonomia, empresa, n_passageiros, peso_max, companhia)
+VALUES ('passageiros', 3, 'PPAEA', 1200, 5000, NULL, 200, NULL, 'AZUL');
+
+INSERT INTO aeronave (aeronave,  id, prefixo, velocidade, autonomia, empresa, n_passageiros, peso_max, companhia)
+VALUES ('carga', 4, 'PUXKZ', 900, 8000, NULL, NULL, 100000, 'EVERGREEN');
+
+INSERT INTO aeronave (aeronave,  id, prefixo, velocidade, autonomia, empresa, n_passageiros, peso_max, companhia)
+VALUES ('carga', 5, 'PUXLZ', 900, 8000, NULL, NULL, 100000, 'EVERGREEN');

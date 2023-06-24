@@ -1,8 +1,11 @@
 package com.grupotf.airtrafficControl.Dominio;
 
+import jakarta.persistence.DiscriminatorColumn;
+import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 
 @Entity
+@DiscriminatorValue("particular")
 public class AeronaveParticular extends Aeronave {
 
     private String empresa;

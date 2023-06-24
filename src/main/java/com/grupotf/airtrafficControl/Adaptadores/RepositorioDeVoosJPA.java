@@ -2,6 +2,7 @@ package com.grupotf.airtrafficControl.Adaptadores;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
@@ -9,7 +10,6 @@ import com.grupotf.airtrafficControl.Dominio.Aeronave;
 import com.grupotf.airtrafficControl.Dominio.IRepositorioDeVoosCancela;
 import com.grupotf.airtrafficControl.Dominio.IRepositorioDeVoosSlots;
 import com.grupotf.airtrafficControl.Dominio.IRepositorioPlanosVoos;
-import com.grupotf.airtrafficControl.Dominio.IRepositorioDeVoosCancela;
 import com.grupotf.airtrafficControl.Dominio.PlanoDeVoo;
 import com.grupotf.airtrafficControl.Dominio.Rota;
 
@@ -18,6 +18,7 @@ import com.grupotf.airtrafficControl.Dominio.Rota;
 public class RepositorioDeVoosJPA implements IRepositorioDeVoosCancela , IRepositorioDeVoosSlots, IRepositorioPlanosVoos{
     private IRepoVoosCRUD repoVoos;
 
+    @Autowired
     public RepositorioDeVoosJPA(IRepoVoosCRUD repoVoos) {
         this.repoVoos = repoVoos;
     }
@@ -39,7 +40,7 @@ public class RepositorioDeVoosJPA implements IRepositorioDeVoosCancela , IReposi
 
     @Override
     public List<PlanoDeVoo> get(Aeronave aeronave, String data) {
-        return repoVoos.findByAeronaAndData(aeronave, data);
+        return repoVoos.findByAeronaveAndData(aeronave, data);
     }
 
     @Override
