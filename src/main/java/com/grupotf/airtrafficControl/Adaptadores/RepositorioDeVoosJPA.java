@@ -1,6 +1,7 @@
 package com.grupotf.airtrafficControl.Adaptadores;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
@@ -15,17 +16,25 @@ import com.grupotf.airtrafficControl.Dominio.Rota;
 
 @Repository
 @Primary
-public class RepositorioDeVoosJPA implements IRepositorioDeVoosCancela , IRepositorioDeVoosSlots, IRepositorioPlanosVoos{
+public class RepositorioDeVoosJPA
+        implements IRepositorioDeVoosCancela, IRepositorioDeVoosSlots, IRepositorioPlanosVoos {
     private IRepoVoosCRUD repoVoos;
 
     @Autowired
     public RepositorioDeVoosJPA(IRepoVoosCRUD repoVoos) {
         this.repoVoos = repoVoos;
+        cadastra(new PlanoDeVoo(0, null, null, 0, null, null));
     }
 
     @Override
-    public void deletePlano(Long id) {
-        repoVoos.deleteById(id);
+    public Boolean deletePlano(Long id) {
+        Optional<PlanoDeVoo> optional = repoVoos.findById(id);
+        if (optional.isPresent()) {
+            PlanoDeVoo plano = optional.get();
+            repoVoos.delete(plano);
+            return true;
+        }
+            return false;
     }
 
     @Override
@@ -47,7 +56,4 @@ public class RepositorioDeVoosJPA implements IRepositorioDeVoosCancela , IReposi
     public void cadastra(PlanoDeVoo voo) {
         repoVoos.save(voo);
     }
-
-    
-    
 }
