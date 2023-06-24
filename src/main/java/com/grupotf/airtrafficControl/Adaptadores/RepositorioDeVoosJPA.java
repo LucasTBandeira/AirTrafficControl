@@ -6,13 +6,16 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
 import com.grupotf.airtrafficControl.Dominio.Aeronave;
-import com.grupotf.airtrafficControl.Dominio.IRepositorioDeVoos;
+import com.grupotf.airtrafficControl.Dominio.IRepositorioDeVoosCancela;
+import com.grupotf.airtrafficControl.Dominio.IRepositorioDeVoosSlots;
+import com.grupotf.airtrafficControl.Dominio.IRepositorioPlanosVoos;
+import com.grupotf.airtrafficControl.Dominio.IRepositorioDeVoosCancela;
 import com.grupotf.airtrafficControl.Dominio.PlanoDeVoo;
 import com.grupotf.airtrafficControl.Dominio.Rota;
 
 @Repository
 @Primary
-public class RepositorioDeVoosJPA implements IRepositorioDeVoos {
+public class RepositorioDeVoosJPA implements IRepositorioDeVoosCancela , IRepositorioDeVoosSlots, IRepositorioPlanosVoos{
     private IRepoVoosCRUD repoVoos;
 
     public RepositorioDeVoosJPA(IRepoVoosCRUD repoVoos) {
