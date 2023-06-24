@@ -33,6 +33,10 @@ public class ServicoDePlanoDeVoo {
         List<PlanoDeVoo> planoDeVoos = repositorioDeVoosSlots.get(rota, slots.data());
         List<AltitudeSlotDTO> altitudeSlotDTOs = new ArrayList<>();
         int horario = Integer.parseInt(slots.horario().substring(0, slots.horario().indexOf(':')));
+
+        if (rota == null){
+            return altitudeSlotDTOs;
+        }
         
         for (int i = 0; i <= 10; i++){
             for (int j = horario; j <= 24; j++){
