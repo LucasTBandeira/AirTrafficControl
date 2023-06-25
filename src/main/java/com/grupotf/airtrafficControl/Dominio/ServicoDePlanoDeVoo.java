@@ -21,11 +21,12 @@ public class ServicoDePlanoDeVoo {
 
     @Autowired
     public ServicoDePlanoDeVoo(IRepositorioDeVoosCancela repositorioDeVoosCancela,
-            IRepositorioDeVoosSlots repositorioDeVoosSlots, ServicoDeRotas servicoDeRotas, ServicoDeAeronaves servicoDeAeronaves) {
+            IRepositorioDeVoosSlots repositorioDeVoosSlots, ServicoDeRotas servicoDeRotas, ServicoDeAeronaves servicoDeAeronaves, IRepositorioPlanosVoos repositorioPlanosVoos) {
         this.repositorioDeVoosCancela = repositorioDeVoosCancela;
         this.repositorioDeVoosSlots = repositorioDeVoosSlots;
         this.servicoDeRotas = servicoDeRotas;
         this.servicoDeAeronaves = servicoDeAeronaves;
+        this.repositorioPlanosVoos = repositorioPlanosVoos;
     }
 
     public boolean cancelaPlano(Long id) {
@@ -100,7 +101,7 @@ public class ServicoDePlanoDeVoo {
             erro += "Erro: altitude inválida.\n";
         }
 
-        if (!servicoDeAeronaves.verificaDisponibilidade(aeronave, data, slots)){
+        if (!servicoDeAeronaves.verificaDisponibilidade(aeronave.getPrefixo(), data, slots)){
             erro += "Erro: avião não disponível.\n";
         }
 

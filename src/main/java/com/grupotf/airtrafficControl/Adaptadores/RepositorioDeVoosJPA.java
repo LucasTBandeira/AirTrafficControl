@@ -48,8 +48,8 @@ public class RepositorioDeVoosJPA
     }
 
     @Override
-    public List<PlanoDeVoo> get(Aeronave aeronave, String data) {
-        return repoVoos.findByAeronaveAndData(aeronave, data);
+    public List<PlanoDeVoo> get(String pre_aeronave, String data) {
+        return repoVoos.findByPrefixoAndData(pre_aeronave, data);
     }
 
     @Override
