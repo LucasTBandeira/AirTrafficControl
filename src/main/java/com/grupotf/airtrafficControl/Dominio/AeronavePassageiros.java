@@ -17,6 +17,8 @@ public class AeronavePassageiros extends Aeronave {
         this.companhia = companhia;
     }
 
+    protected AeronavePassageiros(){}
+    
     public int getN_passageiros() {
         return n_passageiros;
     }

@@ -1,6 +1,5 @@
 package com.grupotf.airtrafficControl.Dominio;
 
-import jakarta.persistence.DiscriminatorColumn;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 
@@ -9,14 +8,18 @@ import jakarta.persistence.Entity;
 public class AeronaveParticular extends Aeronave {
 
     private String empresa;
+    
     public AeronaveParticular(long id, String prefixo, double velocidade, double autonomia,String empresa) {
         super(id, prefixo, velocidade, autonomia);
         this.empresa=empresa;
-        
     }
+
+    protected AeronaveParticular() {}
+
     public String getEmpresa() {
         return empresa;
     }
+
     public void setEmpresa(String empresa) {
         this.empresa = empresa;
     }

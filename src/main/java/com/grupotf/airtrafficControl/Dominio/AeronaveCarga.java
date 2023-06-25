@@ -17,6 +17,8 @@ public class AeronaveCarga extends Aeronave{
         this.companhia = companhia;
     }
 
+    protected AeronaveCarga() {}
+
     public double getPeso_max() {
         return peso_max;
     }

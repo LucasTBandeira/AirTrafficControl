@@ -5,9 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.http.StreamingHttpOutputMessage.Body;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,6 +17,7 @@ import com.grupotf.airtrafficControl.Aplicacao.AltitudeSlotDTO;
 import com.grupotf.airtrafficControl.Aplicacao.AprovaPlano_UC;
 import com.grupotf.airtrafficControl.Aplicacao.AvaliaPlano_UC;
 import com.grupotf.airtrafficControl.Aplicacao.CancelaPlano_UC;
+import com.grupotf.airtrafficControl.Aplicacao.PlanoDeVooDTO;
 import com.grupotf.airtrafficControl.Aplicacao.Rotas_UC;
 import com.grupotf.airtrafficControl.Aplicacao.SlotsDTO;
 import com.grupotf.airtrafficControl.Aplicacao.SlotsSlivres_UC;
@@ -73,6 +72,14 @@ public class TrafegoController {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(slotsSlivres_UC.run(slots));
+    }
+
+    @PostMapping("/avaliaPlanoDeVoo")
+    @CrossOrigin(origins = "*")
+    public ResponseEntity<String> avaliaPlano(@RequestBody final PlanoDeVooDTO plano){
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(avaliaPlano_UC.run(plano));
     }
 
 }

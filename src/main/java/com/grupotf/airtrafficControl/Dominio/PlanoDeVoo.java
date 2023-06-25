@@ -14,7 +14,7 @@ public class PlanoDeVoo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @ManyToOne
+    // @ManyToOne
     private Aeronave aeronave;
 
     @ManyToOne
