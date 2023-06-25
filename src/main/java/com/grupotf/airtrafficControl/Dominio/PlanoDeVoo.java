@@ -15,7 +15,7 @@ public class PlanoDeVoo {
     private long id;
 
     // @ManyToOne
-    private Aeronave aeronave;
+    private String prefixo;
 
     @ManyToOne
     private Rota rota;
@@ -27,9 +27,9 @@ public class PlanoDeVoo {
     protected PlanoDeVoo() {
     }
 
-    public PlanoDeVoo(long id, Aeronave aeronave, Rota rota, int altitude, String data, int[] slots) {
+    public PlanoDeVoo(long id, String prefixo, Rota rota, int altitude, String data, int[] slots) {
         this.id = id;
-        this.aeronave = aeronave;
+        this.prefixo = prefixo;
         this.rota = rota;
         this.altitude = altitude;
         this.data = data;
@@ -44,12 +44,12 @@ public class PlanoDeVoo {
         this.id = id;
     }
 
-    public Aeronave getAeronave() {
-        return aeronave;
+    public String getAeronave() {
+        return prefixo;
     }
 
-    public void setAeronave(Aeronave aeronave) {
-        this.aeronave = aeronave;
+    public void setAeronave(String prefixo) {
+        this.prefixo = prefixo;
     }
 
     public Rota getRota() {
@@ -86,7 +86,7 @@ public class PlanoDeVoo {
 
     @Override
     public String toString() {
-        return "PlanoDeVoo [id=" + id + ", aeronave=" + aeronave + ", rota=" + rota + ", altitude=" + altitude
+        return "PlanoDeVoo [id=" + id + ", aeronave=" + prefixo + ", rota=" + rota + ", altitude=" + altitude
                 + ", data=" + data + ", slots=" + Arrays.toString(slots) + "]";
     }
 

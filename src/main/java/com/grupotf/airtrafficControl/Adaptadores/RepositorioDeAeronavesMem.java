@@ -13,7 +13,7 @@ import com.grupotf.airtrafficControl.Dominio.AeronavePassageiros;
 import com.grupotf.airtrafficControl.Dominio.IRepositorioDeAeronaves;
 
 @Repository
-@Primary
+// @Primary
 public class RepositorioDeAeronavesMem implements IRepositorioDeAeronaves{
     private List<Aeronave> aeronaves;
 

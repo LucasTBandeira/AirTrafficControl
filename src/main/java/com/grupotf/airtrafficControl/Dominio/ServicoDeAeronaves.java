@@ -30,8 +30,8 @@ public class ServicoDeAeronaves {
         return Math.ceil(distancia / velocidade) <= slots.length;
     }
 
-    public boolean verificaDisponibilidade(Aeronave aeronave, String data, int[] slots) {
-        List<PlanoDeVoo> planoDeVoos = repositorioPlanosVoos.get(aeronave, data);
+    public boolean verificaDisponibilidade(String pre_aeronave, String data, int[] slots) {
+        List<PlanoDeVoo> planoDeVoos = repositorioPlanosVoos.get(pre_aeronave, data);
         for (PlanoDeVoo plano : planoDeVoos) {
             for (int slot : slots) {
                 int[] slotsPlano = plano.getSlots();

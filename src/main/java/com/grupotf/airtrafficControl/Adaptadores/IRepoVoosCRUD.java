@@ -12,5 +12,5 @@ public interface IRepoVoosCRUD extends CrudRepository<PlanoDeVoo, Long> {
     void deleteById(Long id);
     List<PlanoDeVoo> findByRotaAndData(Rota rota, String data);
     List<PlanoDeVoo> findByRotaAndAltitudeAndData(Rota rota, int altitude, String data);
-    List<PlanoDeVoo> findByAeronaveAndData(Aeronave aeronave, String data);
+    List<PlanoDeVoo> findByPrefixoAndData(String pre_aeronave, String data);
 }

@@ -8,6 +8,7 @@ import com.grupotf.airtrafficControl.Dominio.Aeronave;
 import com.grupotf.airtrafficControl.Dominio.IRepositorioDeAeronaves;
 
 @Repository
+@Primary
 public class RepositorioDeAeronavesJPA implements IRepositorioDeAeronaves{
     private IRepoAeronavesCRUD repoAeronaves;
 
