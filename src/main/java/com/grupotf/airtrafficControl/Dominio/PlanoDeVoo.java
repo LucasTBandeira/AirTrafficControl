@@ -14,7 +14,6 @@ public class PlanoDeVoo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    // @ManyToOne
     private String prefixo;
 
     @ManyToOne
@@ -27,8 +26,7 @@ public class PlanoDeVoo {
     protected PlanoDeVoo() {
     }
 
-    public PlanoDeVoo(long id, String prefixo, Rota rota, int altitude, String data, int[] slots) {
-        this.id = id;
+    public PlanoDeVoo(String prefixo, Rota rota, int altitude, String data, int[] slots) {
         this.prefixo = prefixo;
         this.rota = rota;
         this.altitude = altitude;

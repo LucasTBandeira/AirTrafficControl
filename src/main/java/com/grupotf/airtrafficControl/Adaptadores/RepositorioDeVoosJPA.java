@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
-import com.grupotf.airtrafficControl.Dominio.Aeronave;
 import com.grupotf.airtrafficControl.Dominio.IRepositorioDeVoosCancela;
 import com.grupotf.airtrafficControl.Dominio.IRepositorioDeVoosSlots;
 import com.grupotf.airtrafficControl.Dominio.IRepositorioPlanosVoos;
@@ -23,7 +22,6 @@ public class RepositorioDeVoosJPA
     @Autowired
     public RepositorioDeVoosJPA(IRepoVoosCRUD repoVoos) {
         this.repoVoos = repoVoos;
-        cadastra(new PlanoDeVoo(0, null, null, 0, null, null));
     }
 
     @Override
@@ -55,5 +53,10 @@ public class RepositorioDeVoosJPA
     @Override
     public void cadastra(PlanoDeVoo voo) {
         repoVoos.save(voo);
+    }
+
+    @Override
+    public Long count(){
+        return repoVoos.count();
     }
 }

@@ -82,4 +82,12 @@ public class TrafegoController {
                 .body(avaliaPlano_UC.run(plano));
     }
 
+
+    @PostMapping("/aprovaPlanoDeVoo")
+    @CrossOrigin(origins = "*")
+    public ResponseEntity<String> aprovaPlano(@RequestBody final PlanoDeVooDTO plano){
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(aprovaPlano_UC.run(plano));
+    }
 }

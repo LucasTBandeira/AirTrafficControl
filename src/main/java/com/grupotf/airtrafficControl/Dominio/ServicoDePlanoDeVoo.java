@@ -21,7 +21,8 @@ public class ServicoDePlanoDeVoo {
 
     @Autowired
     public ServicoDePlanoDeVoo(IRepositorioDeVoosCancela repositorioDeVoosCancela,
-            IRepositorioDeVoosSlots repositorioDeVoosSlots, ServicoDeRotas servicoDeRotas, ServicoDeAeronaves servicoDeAeronaves, IRepositorioPlanosVoos repositorioPlanosVoos) {
+            IRepositorioDeVoosSlots repositorioDeVoosSlots, ServicoDeRotas servicoDeRotas,
+            ServicoDeAeronaves servicoDeAeronaves, IRepositorioPlanosVoos repositorioPlanosVoos) {
         this.repositorioDeVoosCancela = repositorioDeVoosCancela;
         this.repositorioDeVoosSlots = repositorioDeVoosSlots;
         this.servicoDeRotas = servicoDeRotas;
@@ -40,15 +41,15 @@ public class ServicoDePlanoDeVoo {
         List<AltitudeSlotDTO> altitudeSlotDTOs = new ArrayList<>();
         int horario = Integer.parseInt(slots.horario().substring(0, slots.horario().indexOf(':')));
 
-        if (rota == null){
+        if (rota == null) {
             return altitudeSlotDTOs;
         }
-        
-        for (int i = 0; i <= 10; i++){
-            for (int j = horario; j <= 23; j++){
+
+        for (int i = 0; i <= 10; i++) {
+            for (int j = horario; j <= 23; j++) {
                 int altitude = 25000 + i * 1000;
                 int slot = j;
-                if (!verificaSlot(planoDeVoos, altitude, slot)){
+                if (!verificaSlot(planoDeVoos, altitude, slot)) {
                     altitudeSlotDTOs.add(new AltitudeSlotDTO(altitude, slot));
                 }
             }
@@ -62,9 +63,9 @@ public class ServicoDePlanoDeVoo {
         for (int i = 0; i < planoDeVoos.size(); i++) {
             PlanoDeVoo plano = planoDeVoos.get(i);
             int[] slots = plano.getSlots();
-            if (altitude == plano.getAltitude()){
-                for (int j = 0; j < slots.length; i++){
-                    if (slots[j] == slot){
+            if (altitude == plano.getAltitude()) {
+                for (int j = 0; j < slots.length; i++) {
+                    if (slots[j] == slot) {
                         return true;
                     }
                 }
@@ -74,16 +75,39 @@ public class ServicoDePlanoDeVoo {
     }
 
     public String avaliaPlano(PlanoDeVooDTO planoDeVooDTO) {
-       String responseVerificaAeronave = verificaAeronave(planoDeVooDTO);
-       String responseVerificaRota = verificaRota(planoDeVooDTO);
-       String response = responseVerificaAeronave + responseVerificaRota;
-       if (response.isEmpty()){
+        Aeronave aeronave = servicoDeAeronaves.get(planoDeVooDTO.aeronave());
+        Rota rota = servicoDeRotas.get(planoDeVooDTO.rota());
+
+        if (rota == null) {
+            return "Erro: rota não existe";
+        }
+
+        if (aeronave == null) {
+            return "Erro: aeronave não existe";
+        }
+
+        String responseVerificaAeronave = verificaAeronave(planoDeVooDTO);
+        String responseVerificaRota = verificaRota(planoDeVooDTO);
+        String response = responseVerificaAeronave + responseVerificaRota;
+
+        if (response.isEmpty()) {
             return "Aprovado";
-       }
-       return response;
+        }
+        return response;
     }
 
-    public String verificaAeronave(PlanoDeVooDTO planoDeVooDTO){
+    public String aprovaPlano(PlanoDeVooDTO planoDeVooDTO) {
+        String response = avaliaPlano(planoDeVooDTO);
+        if (response.equals("Aprovado")) {
+            PlanoDeVoo plano = new PlanoDeVoo(planoDeVooDTO.aeronave(), servicoDeRotas.get(planoDeVooDTO.rota()),
+                    planoDeVooDTO.altitude(), planoDeVooDTO.data(), planoDeVooDTO.slots());
+            repositorioPlanosVoos.cadastra(plano);
+            return "Liberado: id " + repositorioPlanosVoos.count().toString();
+        }
+        return response;
+    }
+
+    public String verificaAeronave(PlanoDeVooDTO planoDeVooDTO) {
         Aeronave aeronave = servicoDeAeronaves.get(planoDeVooDTO.aeronave());
         String data = planoDeVooDTO.data();
         Rota rota = servicoDeRotas.get(planoDeVooDTO.rota());
@@ -92,31 +116,30 @@ public class ServicoDePlanoDeVoo {
 
         String erro = "";
 
-
-        if(!servicoDeAeronaves.verificaAutonomia(aeronave, rota.getDistancia())){
+        if (!servicoDeAeronaves.verificaAutonomia(aeronave, rota.getDistancia())) {
             erro += "Erro: combustível insuficiente.\n";
         }
 
-        if (!servicoDeAeronaves.verificaAltitude(aeronave, altitude)){
+        if (!servicoDeAeronaves.verificaAltitude(aeronave, altitude)) {
             erro += "Erro: altitude inválida.\n";
         }
 
-        if (!servicoDeAeronaves.verificaDisponibilidade(aeronave.getPrefixo(), data, slots)){
+        if (!servicoDeAeronaves.verificaDisponibilidade(aeronave.getPrefixo(), data, slots)) {
             erro += "Erro: avião não disponível.\n";
         }
 
-        if (!servicoDeAeronaves.verificaHorario(aeronave, slots)){
+        if (!servicoDeAeronaves.verificaHorario(aeronave, slots)) {
             erro += "Erro: horário inválido.\n";
         }
 
-        if (!servicoDeAeronaves.verificaTempo(aeronave, rota, slots)){
+        if (!servicoDeAeronaves.verificaTempo(aeronave, rota, slots)) {
             erro += "Erro: tempo insuficiente.\n";
         }
 
         return erro;
     }
 
-    public String verificaRota(PlanoDeVooDTO planoDeVooDTO){
+    public String verificaRota(PlanoDeVooDTO planoDeVooDTO) {
         String data = planoDeVooDTO.data();
         Rota rota = servicoDeRotas.get(planoDeVooDTO.rota());
         int altitude = planoDeVooDTO.altitude();
@@ -124,8 +147,8 @@ public class ServicoDePlanoDeVoo {
         List<PlanoDeVoo> planoDeVoos = repositorioPlanosVoos.get(rota, altitude, data);
         String erro = "";
 
-        for (int i = 0; i < slots.length - 1; i++){
-            if (slots[i + 1] - slots[i] != 1){
+        for (int i = 0; i < slots.length - 1; i++) {
+            if (slots[i + 1] - slots[i] != 1) {
                 erro += "Erro: alocação inválida dos slots.\n";
                 break;
             }
@@ -143,7 +166,6 @@ public class ServicoDePlanoDeVoo {
         }
 
         return erro;
-
     }
 
 }
