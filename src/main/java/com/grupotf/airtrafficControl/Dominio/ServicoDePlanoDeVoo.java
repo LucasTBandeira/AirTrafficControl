@@ -1,5 +1,7 @@
 package com.grupotf.airtrafficControl.Dominio;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -22,6 +24,10 @@ public class ServicoDePlanoDeVoo {
         this.servicoDeAeronaves = servicoDeAeronaves;
         this.repositorioPlanosVoos = repositorioPlanosVoos;
         this.servicoVerificacaoPlano = servicoVerificacaoPlano;
+    }
+
+       public List<PlanoDeVoo> all(){
+        return repositorioPlanosVoos.all();
     }
 
     public boolean cancelaPlano(Long id) {

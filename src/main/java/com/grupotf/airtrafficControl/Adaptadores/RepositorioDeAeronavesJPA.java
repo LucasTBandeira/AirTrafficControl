@@ -1,5 +1,7 @@
 package com.grupotf.airtrafficControl.Adaptadores;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
@@ -20,6 +22,11 @@ public class RepositorioDeAeronavesJPA implements IRepositorioDeAeronaves{
     @Override
     public Aeronave get(String prefixo) {
         return  repoAeronaves.findByPrefixo(prefixo);
+    }
+
+    @Override
+    public List<Aeronave> all() {
+       return repoAeronaves.findAll();
     }
     
 }

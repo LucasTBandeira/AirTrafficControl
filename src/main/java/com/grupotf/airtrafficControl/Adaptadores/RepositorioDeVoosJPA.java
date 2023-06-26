@@ -59,4 +59,9 @@ public class RepositorioDeVoosJPA
     public Long count(){
         return repoVoos.count();
     }
+
+    @Override
+    public List<PlanoDeVoo> all() {
+        return repoVoos.findAll();
+    }
 }

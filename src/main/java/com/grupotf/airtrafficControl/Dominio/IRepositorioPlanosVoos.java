@@ -7,6 +7,7 @@ public interface IRepositorioPlanosVoos {
     List<PlanoDeVoo> get(String pre_aeronave, String data);
     void cadastra(PlanoDeVoo voo);
     Long count();
+    List<PlanoDeVoo> all();
 }
     
 

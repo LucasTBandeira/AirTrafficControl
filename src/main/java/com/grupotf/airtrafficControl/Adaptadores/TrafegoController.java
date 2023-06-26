@@ -18,9 +18,14 @@ import com.grupotf.airtrafficControl.Aplicacao.AprovaPlano_UC;
 import com.grupotf.airtrafficControl.Aplicacao.AvaliaPlano_UC;
 import com.grupotf.airtrafficControl.Aplicacao.CancelaPlano_UC;
 import com.grupotf.airtrafficControl.Aplicacao.PlanoDeVooDTO;
+import com.grupotf.airtrafficControl.Aplicacao.RetornaAeronaves_UC;
+import com.grupotf.airtrafficControl.Aplicacao.RetornaPlanos_UC;
+import com.grupotf.airtrafficControl.Aplicacao.RetornaRotas_UC;
 import com.grupotf.airtrafficControl.Aplicacao.Rotas_UC;
 import com.grupotf.airtrafficControl.Aplicacao.SlotsDTO;
 import com.grupotf.airtrafficControl.Aplicacao.SlotsSlivres_UC;
+import com.grupotf.airtrafficControl.Dominio.Aeronave;
+import com.grupotf.airtrafficControl.Dominio.PlanoDeVoo;
 import com.grupotf.airtrafficControl.Dominio.Rota;
 
 @RestController
@@ -31,15 +36,24 @@ public class TrafegoController {
     private CancelaPlano_UC cancelaPlano_UC;
     private Rotas_UC rotas_UC;
     private SlotsSlivres_UC slotsSlivres_UC;
+    private RetornaRotas_UC retornaRotas_UC;
+    private RetornaAeronaves_UC retornaAeronaves_UC;
+    private RetornaPlanos_UC retornaPlanos_UC;
 
+   
     @Autowired
     public TrafegoController(AprovaPlano_UC aprovaPlano_UC, AvaliaPlano_UC avaliaPlano_UC,
-            CancelaPlano_UC cancelaPlano_UC, Rotas_UC rotas_UC, SlotsSlivres_UC slotsSlivres_UC) {
+            CancelaPlano_UC cancelaPlano_UC, Rotas_UC rotas_UC, SlotsSlivres_UC slotsSlivres_UC,
+            RetornaRotas_UC retornaRotas_UC, RetornaAeronaves_UC retornaAeronaves_UC,
+            RetornaPlanos_UC retornaPlanos_UC) {
         this.aprovaPlano_UC = aprovaPlano_UC;
         this.avaliaPlano_UC = avaliaPlano_UC;
         this.cancelaPlano_UC = cancelaPlano_UC;
         this.rotas_UC = rotas_UC;
         this.slotsSlivres_UC = slotsSlivres_UC;
+        this.retornaRotas_UC = retornaRotas_UC;
+        this.retornaAeronaves_UC = retornaAeronaves_UC;
+        this.retornaPlanos_UC = retornaPlanos_UC;
     }
 
     @GetMapping("/rotas/{aeroporto_origem}/{aeroporto_destino}")
@@ -89,5 +103,32 @@ public class TrafegoController {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(aprovaPlano_UC.run(plano));
+    }
+
+    @GetMapping("/allRotas")
+    @CrossOrigin(origins = "*")
+    public ResponseEntity<List<Rota>> retornaRotas() {
+       return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(retornaRotas_UC.run());
+
+    }
+
+    @GetMapping("/allPlanos")
+    @CrossOrigin(origins = "*")
+    public ResponseEntity<List<PlanoDeVoo>> retornaPlanos() {
+       return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(retornaPlanos_UC.run());
+
+    }
+
+    @GetMapping("/allAeronaves")
+    @CrossOrigin(origins = "*")
+    public ResponseEntity<List<Aeronave>> retornaAeronaves() {
+       return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(retornaAeronaves_UC.run());
+
     }
 }

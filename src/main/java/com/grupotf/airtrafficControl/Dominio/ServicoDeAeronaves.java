@@ -16,6 +16,10 @@ public class ServicoDeAeronaves {
         this.repositorioPlanosVoos = repositorioPlanosVoos;
     }
 
+    public List<Aeronave> all(){
+        return repositorioDeAeronaves.all();
+    }
+
     public Aeronave get(String prefixo) {
         return repositorioDeAeronaves.get(prefixo);
     }

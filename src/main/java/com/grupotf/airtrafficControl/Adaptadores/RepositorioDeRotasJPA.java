@@ -27,5 +27,10 @@ public class RepositorioDeRotasJPA implements IRepositorioDeRotas{
     public Rota get(String nome) {
        return repoJpa.findByNome(nome);
     }
+
+    @Override
+    public List<Rota> all() {
+       return repoJpa.findAll();
+    }
     
 }
