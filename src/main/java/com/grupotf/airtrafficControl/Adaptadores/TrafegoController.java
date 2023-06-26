@@ -111,7 +111,6 @@ public class TrafegoController {
        return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(retornaRotas_UC.run());
-
     }
 
     @GetMapping("/allPlanos")
@@ -120,7 +119,6 @@ public class TrafegoController {
        return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(retornaPlanos_UC.run());
-
     }
 
     @GetMapping("/allAeronaves")
@@ -131,4 +129,5 @@ public class TrafegoController {
                 .body(retornaAeronaves_UC.run());
 
     }
+    
 }

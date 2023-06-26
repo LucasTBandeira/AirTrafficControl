@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.grupotf.airtrafficControl.Dominio.Aeronave;
 import com.grupotf.airtrafficControl.Dominio.PlanoDeVoo;
 import com.grupotf.airtrafficControl.Dominio.Rota;
 

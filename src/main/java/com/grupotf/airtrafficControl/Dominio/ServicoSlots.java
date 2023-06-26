@@ -42,7 +42,7 @@ public class ServicoSlots {
         }
 
         return altitudeSlotDTOs;
-        
+
     }
 
     public boolean verificaSlot(List<PlanoDeVoo> planoDeVoos, int altitude, int slot) {
