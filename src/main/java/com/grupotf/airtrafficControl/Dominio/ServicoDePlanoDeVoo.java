@@ -15,6 +15,7 @@ public class ServicoDePlanoDeVoo {
     private ServicoDeRotas servicoDeRotas;
     private ServicoDeAeronaves servicoDeAeronaves;
     private ServicoVerificacaoPlano servicoVerificacaoPlano;
+    private int count=1;
 
     @Autowired
     public ServicoDePlanoDeVoo(IRepositorioDeVoosCancela repositorioDeVoosCancela, ServicoDeRotas servicoDeRotas,
@@ -62,7 +63,7 @@ public class ServicoDePlanoDeVoo {
             PlanoDeVoo plano = new PlanoDeVoo(planoDeVooDTO.aeronave(), servicoDeRotas.get(planoDeVooDTO.rota()),
                     planoDeVooDTO.altitude(), planoDeVooDTO.data(), planoDeVooDTO.slots());
             repositorioPlanosVoos.cadastra(plano);
-            return "Liberado: id " + repositorioPlanosVoos.count().toString();
+            return "Liberado: id " + count++;
         }
         return response;
     }
