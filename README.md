@@ -9,7 +9,7 @@ Para rodar o programa são necessários Maven e Java instalados. O passo a passo
 
 Agora, usando o Postman, por exemplo, é possível fazer as seguintes requisições: 
 
-Listar todas Aeronaves:/n
+Listar todas Aeronaves:
 Fazer uma requisição GET na url localhost:8080/scta/allAeronaves
 
 Listar todos Planos de Voos:
