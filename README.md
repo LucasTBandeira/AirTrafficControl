@@ -2,7 +2,7 @@
 
 Projeto Back-end de um sistema de controle de tráfego aéreo desenvolvido em Java(Spring Boot). Envolveu a criação de API REST considerando princípios SOLID e arquitetura limpa. Utilização do JPA como interface para frameworks de persistência de dados.  
 
-Para rodar o programa são necessários Maven e Java instalados. O passo a passo para rodar o programa está abaixo:  
+Para rodar o programa são necessários Maven e Java na versao 14 ou superior instalados. O passo a passo para rodar o programa está abaixo:  
 1 - Compile e construa o projeto com o comando mvn clean install. Isso criará um arquivo JAR no diretório target do seu projeto.  
 2 - Navegue até o diretório target com o comando cd target.  
 3 - Execute o jar com o comando: java -jar airtrafficControl-0.0.1-SNAPSHOT.jar (se necessário substitua o nome do jar)  
