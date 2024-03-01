@@ -23,6 +23,7 @@ Fazer uma requisição GET na url localhost:8080/scta/rotas/{origem}/{destino}
 Ex: localhost:8080/scta/rotas/Brasilia/Fortaleza
 
 Listar todos os Slots que estão disponíveis para as aeronaves utilizarem em determinada rota e em determinado dia e horário:
+
 Fazer uma requisição POST na url localhost:8080/scta/slotslivres e utilizar um json no seguinte formato:
 {"rota":"POAFLO10","data":"11/10/2024","horario":"10:42","velocidadeCruzeiro":850 } 
 
